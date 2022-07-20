@@ -12,7 +12,7 @@ function App() {
     <GoogleOAuthProvider clientId="984282134975-0v3vgk8ip0s7d45ssg8n0dgrjjv8b4r3.apps.googleusercontent.com">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Welcome />} />
+          <Route exact path="/blog" element={<Welcome />} />
           <Route exact path="/posts" element={<Post />}/>
           <Route exact path="/users" element={<UsersPage />}/>
         </Routes>
