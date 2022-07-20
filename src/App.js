@@ -5,6 +5,7 @@ import Welcome from "./Pages/welcome/welcome";
 import "antd/dist/antd.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Post from "./Pages/posts/post";
+import UsersPage from "./Pages/users/users";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Welcome />} />
           <Route exact path="/posts" element={<Post />}/>
+          <Route exact path="/users" element={<UsersPage />}/>
         </Routes>
       </BrowserRouter>
     </GoogleOAuthProvider>

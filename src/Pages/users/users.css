@@ -21,3 +21,11 @@
     color: #7763FA;
     font-weight: 400;
 }
+
+.usersList{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+}

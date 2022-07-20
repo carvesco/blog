@@ -4,7 +4,10 @@ import PostCard from "../../Components/postCard/postCard";
 import "./post.css";
 import { useSearchParams } from "react-router-dom";
 import { Row, Spin } from "antd";
+import { Link, createSearchParams, useNavigate } from "react-router-dom";
+
 const Post = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [loadingPosts, setLoadingPosts] = useState(true);
   const [params] = useSearchParams();
@@ -30,7 +33,6 @@ const Post = () => {
         setLoadingPosts(false);
         console.log(res);
         setData(res?.data?.data);
-
       });
     }
   };
@@ -39,6 +41,12 @@ const Post = () => {
       <div className="titleContainer">
         <h1 className="title">Posts</h1>
       </div>
+      <div className="titleContainer">
+        <h1 className="titleUsers" onClick={() => {navigate("/users")}}>
+          Users
+        </h1>
+      </div>
+
       {loadingPosts ? (
         <Row justify="space-around" align="middle">
           <Spin />
