@@ -25,7 +25,7 @@ const UsersPage = () => {
         <>
           <div className="usersList">
             <Avatar src={itm?.picture} />
-            <h1>{itm?.firstName}</h1>
+            <h1 style={{color:"#7763FA",marginLeft:"5px",marginTop:"8px"}}>{itm?.firstName}</h1>
           </div>
         </>
       ))}
