@@ -2,8 +2,11 @@ import Axios from "axios";
 import React, { useState, useEffect } from "react";
 import PostCard from "../../Components/postCard/postCard";
 import "./post.css";
+import { useSearchParams } from "react-router-dom";
 const Post = () => {
   const [data, setData] = useState([]);
+  const [params] = useSearchParams();
+  console.log(params);
   useEffect(() => {
     getData();
   }, []);

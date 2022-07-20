@@ -10,7 +10,7 @@ const Welcome = () => {
   const navigate = useNavigate();
   const handelSucces = (credentialResponse) => {
     console.log(credentialResponse);
-    navigate("/main");
+    navigate("/posts");
   };
   return (
     <div className="search-div">
