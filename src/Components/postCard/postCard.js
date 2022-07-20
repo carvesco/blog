@@ -19,21 +19,21 @@ const PostCard = (props) => {
   };
 
   const postTags = (a) => {
+    console.log(a);
+    //if()
     //navigate("/posts");
   };
 
   return (
     <>
-      <div
-        className={styles.cardContainer}
-        onClick={() => {
-          setCommentsId(props.props.id);
-          showCommentsModla();
-        }}
-      >
+      <div className={styles.cardContainer}>
         <Row style={{ height: "100%" }}>
           <Col span={11} style={{ height: "100%" }}>
             <Image
+              onClick={() => {
+                setCommentsId(props.props.id);
+                showCommentsModla();
+              }}
               height={"100%"}
               width={"100%"}
               style={{
@@ -45,21 +45,38 @@ const PostCard = (props) => {
           </Col>
           <Col span={13}>
             <div className={styles.textContainer}>
-              <h2 className={styles.postName}>{props.props.text}</h2>
-              <div className={styles.nameContainer}>
-                <h3 className={styles.ownerName}>
-                  {props.props.owner?.firstName}
-                </h3>
-                <h3 className={styles.ownerName} style={{ marginLeft: "5px" }}>
-                  {props.props.owner?.lastName}
-                </h3>
+              <div
+                onClick={() => {
+                  setCommentsId(props.props.id);
+                  showCommentsModla();
+                }}
+              >
+                <h2 className={styles.postName}>{props.props.text}</h2>
+                <div className={styles.nameContainer}>
+                  <h3 className={styles.ownerName}>
+                    {props.props.owner?.firstName}
+                  </h3>
+                  <h3
+                    className={styles.ownerName}
+                    style={{ marginLeft: "5px" }}
+                  >
+                    {props.props.owner?.lastName}
+                  </h3>
+                </div>
               </div>
               <div className={styles.tagsContainer}>
                 {props.props.tags?.map((itm) => (
                   <>
                     <Button
                       style={{ backgroundColor: "#7763FA", color: "#ffffff" }}
-                      onClick={postTags(itm)}
+                      onClick={() => {
+                        navigate({
+                          pathname: "/posts",
+                          search: createSearchParams({
+                            id: itm,
+                          }).toString()
+                        });
+                      }}
                     >
                       {itm}
                     </Button>
