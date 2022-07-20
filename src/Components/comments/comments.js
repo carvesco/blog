@@ -7,17 +7,18 @@ const Comments = (props) => {
   const [Comments, setComments] = useState([]);
   const [loadingComments, setLoadingComments] = useState(true);
   useEffect(() => {
+    const getDetails = async () => {
+      await Axios.get(`https://dummyapi.io/data/v1/post/${props.id}/comment`, {
+        headers: { "app-id": "62d817acf8cecea553708f54" },
+      }).then((res) => {
+        setLoadingComments(false);
+        console.log(res);
+        setComments(res.data.data);
+      });
+    };
     getDetails();
   }, []);
-  const getDetails = async () => {
-    await Axios.get(`https://dummyapi.io/data/v1/post/${props.id}/comment`, {
-      headers: { "app-id": "62d817acf8cecea553708f54" },
-    }).then((res) => {
-      setLoadingComments(false);
-      console.log(res);
-      setComments(res.data.data);
-    });
-  };
+
   return (
     <Modal
       title="Comments"
