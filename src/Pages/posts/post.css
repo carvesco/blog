@@ -1,0 +1,16 @@
+.postContainer{
+    width: 60%;
+    margin: auto;
+}
+
+.title{
+    margin: auto;
+    font-size: 50px;
+    color: #7763FA;
+    font-weight: 400;
+}
+.titleContainer{
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+}
